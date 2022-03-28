@@ -340,9 +340,11 @@ def update_candlestick_graph(n_clicks, currency_string, what_to_show,
     except:
         return ("No contract found for " + currency_string), go.Figure()
 
-    contract_symbol_ibkr = str(contract_details).split(",")[10]
+    contract_symbol_ibkr = str(contract_details['market_name'])
+    contract_symbol_ibkr = contract_symbol_ibkr.split("\nName:")[0].split("   ")[1]
+        #str(contract_details).split(",")[10]
 
-    # If the contract name doesn't equal the one you want:
+    #If the contract name doesn't equal the one you want:
     if not contract_symbol_ibkr == currency_string:
         return ("Requested contract: " + currency_string + " but received " + \
                 "contract: " + contract_symbol_ibkr), go.Figure()

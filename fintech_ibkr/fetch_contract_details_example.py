@@ -31,9 +31,9 @@ stk_details = fetch_contract_details(contract_stk)
 crypto_details = fetch_contract_details(contract_crypto)
 
 print(cp_details)
-print(stk_details)
-print(crypto_details)
+#print(stk_details)
+#print(crypto_details)
 
 # print more columns like this:
-with pd.option_context('display.max_columns', None):
-    print(stk_details)
+#with pd.option_context('display.max_columns', None):
+    #print(stk_details)
